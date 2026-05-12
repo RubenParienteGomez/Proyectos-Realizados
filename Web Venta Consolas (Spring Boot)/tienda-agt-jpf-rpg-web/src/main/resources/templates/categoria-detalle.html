@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title th:text="${categoria.nombre}">Categoría</title>
+
+        <link rel="stylesheet" th:href="@{/css/index.css}">
+        <link rel="stylesheet" th:href="@{/css/categoria-detalle.css}">
+        <link rel="stylesheet" th:href="@{/css/footer.css}">
+        <link rel="stylesheet" th:href="@{/css/navbar.css}">
+    </head>
+    <body>
+        <!-- Navbar -->
+        <div th:replace="fragmentos/navbar :: navbar"></div>
+        <!-- Categoria Detalle -->
+        <div class="categoria-detalle-page">
+            <div class="categoria-detalle-izquierda">
+                <img class="categoria-detalle-img"
+                     th:src="@{${categoria.imagen}}"
+                     th:onerror="|this.onerror=null; this.src='@{/imagenes/no-disponible.jpg}';|"
+                     th:alt="${categoria.nombre}"
+                >
+            </div>
+            <div class="categoria-detalle-derecha">
+                <h1 th:text="${categoria.nombre}">Nombre de la categoría</h1>
+                <p th:text="${categoria.descripcion}">Descripción de la categoría</p>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div th:replace="fragmentos/footer :: footer"></div>
+    </body>
+</html>

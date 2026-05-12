@@ -1,0 +1,110 @@
+/* HERO */
+.marca-hero {
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(135deg, var(--color-fondo-secundario), var(--color-fondo));
+}
+
+.marca-hero h1 {
+    font-size: 2.5rem;
+    color: var(--color-primario);
+    margin-bottom: 10px;
+}
+
+.marca-hero p {
+    color: var(--color-texto-secundario);
+}
+
+
+/* CONTENEDOR */
+.marca-page {
+    padding: 50px 80px;
+    display: flex;
+    justify-content: center;
+}
+
+.marca-container {
+    max-width: 1400px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 40px;
+}
+
+
+/* CARD  */
+.producto-card {
+    background-color: var(--color-fondo-secundario);
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio-bordes);
+    overflow: hidden;
+    box-shadow: var(--sombra-card);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: var(--transicion);
+}
+
+.producto-card:hover {
+    transform: translateY(-8px);
+}
+
+
+.producto-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+
+/* INFO */
+.producto-info {
+    padding: 20px;
+}
+
+.producto-info h3 {
+    margin-bottom: 10px;
+    color: var(--color-primario);
+}
+
+.producto-info p {
+    color: var(--color-texto-secundario);
+    font-size: 14px;
+}
+
+
+/* BOTÓN */
+.producto-action {
+    padding: 15px 20px 20px;
+}
+
+.producto-btn {
+    display: block;
+    text-align: center;
+    background-color: var(--color-primario);
+    color: black;
+    padding: 10px;
+    border-radius: var(--radio-bordes);
+    text-decoration: none;
+    font-weight: bold;
+    transition: var(--transicion);
+}
+
+.producto-btn:hover {
+    background-color: var(--color-primario-hover);
+}
+
+
+/* SIN PRODUCTOS */
+.sin-productos {
+    text-align: center;
+    margin-top: 40px;
+    color: var(--color-texto-secundario);
+}
+
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .marca-page {
+        padding: 40px 5%;
+    }
+}

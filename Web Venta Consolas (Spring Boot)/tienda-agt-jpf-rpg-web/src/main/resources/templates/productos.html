@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>Productos</title>
+        <link rel="stylesheet" th:href="@{/css/index.css}">
+        <link rel="stylesheet" th:href="@{/css/productos.css}">
+        <link rel="stylesheet" th:href="@{/css/footer.css}">
+        <link rel="stylesheet" th:href="@{/css/navbar.css}">
+    </head>
+    <body>
+    <!-- NAVBAR -->
+    <div th:replace="fragmentos/navbar :: navbar"></div>
+
+    <!-- HERO -->
+    <div class="prod-hero">
+        <h1>Para los gamers de consolas</h1>
+        <p>No importa si eres de jugar en casa, de viaje o simplemente quieres pasar un buen rato. Lo importante es que te diviertas en tu videoconsola favorita al mejor precio.</p>
+    </div>
+
+    <!-- LISTADO -->
+    <div class="prod-page">
+        <div class="prod-container">
+            <div class="prod-card" th:each="p : ${productos}">
+                <div class="prod-img-wrapper">
+                    <!-- Si hay imagen del producto, mostrarla. Si falla la URL, usar imagen genérica y alt vacío -->
+                    <img class="prod-img"
+                        th:if="${p.imagen != null and !p.imagen.isEmpty()}"
+                        th:src="${p.imagen}"
+                        th:onerror="|this.onerror=null;this.src='/imagenes/no-disponible.jpg';this.alt='';|"
+                        th:alt="${'Imagen de ' + p.nombre}">
+
+                    <!-- Si no hay imagen, mostrar imagen genérica con alt vacío -->
+                    <img class="prod-img"
+                        th:unless="${p.imagen != null and !p.imagen.isEmpty()}"
+                        th:src="@{/imagenes/no-disponible.jpg}"
+                        alt="">
+
+                    <!-- TAG DESCUENTO -->
+                    <div class="prod-tag"
+                        th:if="${p.descuento > 0}"
+                        th:text="${p.descuento + '%'}">
+                    </div>
+                </div>
+
+                <!-- INFO -->
+                <div class="prod-info">
+
+                    <!-- NOMBRE -->
+                    <h3>
+                        <a class="prod-title"
+                            th:href="@{'/productos/' + ${p.id}}"
+                            th:text="${p.nombre}">
+                        </a>
+                    </h3>
+
+                    <!-- MARCA -->
+                    <p class="prod-marca">
+                        <a th:href="@{/marcas/{id}(id=${p.marca.id})}"
+                            th:text="${p.marca.nombre}">
+                        </a>
+                    </p>
+
+                    <!-- CATEGORÍAS DEL PRODUCTO -->
+                    <div class="producto-categorias">
+
+                        <!-- Sin categorías -->
+                        <div th:if="${#lists.isEmpty(p.categorias)}"
+                            class="cat-vacia">
+                            <span>Sin categorías</span>
+                        </div>
+
+                        <!-- Una categoría -->
+                        <p th:if="${!#lists.isEmpty(p.categorias)} and ${p.categorias.size() == 1}"
+                        class="cat-single">
+                            <span>Categoría: </span>
+                            <a th:href="@{'/categorias/' + ${p.categorias[0].id}}"
+                            th:text="${p.categorias[0].nombre}">
+                            </a>
+                        </p>
+
+                        <!-- Varias categorías -->
+                        <div th:if="${p.categorias != null and p.categorias.size() > 1}"
+                            class="cat-multiple">
+                            <span>Categorías:</span>
+                            <ul>
+                                <li th:each="cat : ${p.categorias}">
+                                    <a th:href="@{'/categorias/' + ${cat.id}}"
+                                    th:text="${cat.nombre}">
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- PRECIO -->
+                    <div class="prod-precio">
+                        <!-- Se redondean los precios a 2 decimales -->
+
+                        <!-- CON DESCUENTO -->
+                        <div th:if="${p.descuento > 0}">
+                            <span class="precio-final"
+                                th:text="${#numbers.formatDecimal(p.precio * (1 - p.descuento / 100.0), 1, 2)} + ' €'"></span>
+
+                            <span class="precio-original"
+                                th:text="${#numbers.formatDecimal(p.precio, 1, 2)} + ' €'"></span>
+                        </div>
+
+                        <!-- SIN DESCUENTO -->
+                        <div th:if="${p.descuento == 0}">
+                            <span class="precio-normal"
+                                th:text="${#numbers.formatDecimal(p.precio, 1, 2)} + ' €'"></span>
+                        </div>
+                    </div>
+
+                    <!-- DESCRIPCIÓN -->
+                    <p class="prod-desc"
+                    th:text="${#strings.substring(p.descripcion, 0, 200)}">
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <div th:replace="fragmentos/footer :: footer"></div>
+    </body>
+</html>

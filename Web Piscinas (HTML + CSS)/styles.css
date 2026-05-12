@@ -1,0 +1,897 @@
+/* --- BASE --- */
+body {
+    font-family: Tahoma;
+    margin: 0;
+}
+
+/* --- NAVEGACIÓN Y LOGO --- */
+nav ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+    background-color: #0bb8e3;
+    list-style: none;
+}
+
+nav ul li {
+    flex: 1; 
+    text-align: center;
+}
+
+nav ul li a {
+    display: inline-block;
+    color: black;
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
+}
+
+nav ul li a:hover {
+    color: white;
+}
+
+.logo a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: auto;
+}
+
+.logo img {
+    height: 4rem;
+    transition: opacity 0.3s ease-in-out;
+    display: block;
+}
+
+.logo-blanco {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+}
+
+.logo a:hover .logo-negro {
+    opacity: 0;
+}
+
+.logo a:hover .logo-blanco {
+    opacity: 1;
+}
+
+/* --- SECCIÓN ALERTA --- */
+.alerta {
+    background-color: #000000;
+    color: #0bb8e3;
+    text-align: center;
+    padding: 0.75rem;
+}
+
+.alerta h2 {
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+.alerta p {
+    font-size: 0.9rem;
+    margin: 5px 0 0 0;
+}
+
+/* --- ANUNCIO PRINCIPAL --- */
+.anuncioPrincipal {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://www.indalpoolpiscinas.com/wp-content/uploads/2020/07/swimming-pool-1737173_1920-min_opt.jpg'); 
+    background-size: cover;
+    background-position: bottom;
+    height: 20rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.contenidoAnuncio h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.botonPresupuesto {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #0bb8e3;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+}
+
+.botonPresupuesto:hover {
+    transform: scale(1.05);
+    background-color: #07748d;
+}
+
+.botonPresupuesto:active {
+    transform: scale(0.95);
+}
+
+/* --- CONSTRUCCIÓN --- */
+.construccionContenido {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5rem;
+    background-color: #0bb8e3;
+    gap: 4rem;
+}
+
+.construccionDescripcion {
+    flex: 1;
+    padding: 1.5rem;
+    border: 0.5rem solid white;
+    border-radius: 1rem;
+    color: white;
+    background-color: #07748d;
+    box-shadow: 0 0.3rem 1rem black;
+}
+
+.construccionDescripcion h2 {
+    font-size: 2rem;
+    margin-top: 0;
+}
+
+.construccionDescripcion p {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.construccionContenido iframe {
+    flex: 1;
+    border: 0.5rem solid white;
+    border-radius: 1rem;
+    box-shadow: 0 0.3rem 1rem black;
+}
+
+/* --- CATÁLOGO --- */
+.seccionCatalogo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 4rem 2rem;
+}
+
+.textoCatalogo h1 {
+    font-size: 2.5rem;
+    color: #07748d;
+}
+
+.textoCatalogo p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+}
+
+.contenedorImagen img {
+    width: 50%;
+    border: 0.5rem solid #0bb8e3;
+    border-radius: 1.5rem;
+    box-shadow: 0 0.5rem 1.5rem rgba(0,0,0,0.1);
+    margin-bottom: 2rem;
+    transition: all 0.4s ease;
+}
+
+.contenedorImagen img:hover {
+    box-shadow: 0 0.5rem 2rem #313131;
+    transform: translateY(-0.5rem);
+}
+
+.botonGrande {
+    padding: 1rem 2.3rem;
+    font-size: 1.2rem;
+}
+
+.textoCatalogo h1::before {
+    content: "NUESTRO COMPROMISO";
+    display: block;
+    font-size: 1rem;
+    letter-spacing: 0.3rem;
+    color: #0bb8e3;
+}
+
+.textoCatalogoTitulo h1 {
+    display: block;
+    font-size: 2.5rem;
+    letter-spacing: 0.3rem;
+    color: #0bb8e3;
+}
+
+.contenedorCatalogo {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    width: 90%;
+    max-width: 75rem;
+    margin-top: 3rem;
+}
+
+.tarjetaPiscina {
+    background-color: #f4f4f4;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 0.1rem 1rem black;
+    transition: transform 0.3s ease;
+    text-align: center;
+}
+
+.tarjetaPiscina:hover {
+    transform: translateY(-1rem);
+}
+
+.imagenPiscina {
+    width: 100%;
+    height: 12rem;
+    object-fit: cover;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.tarjetaPiscina h3 {
+    color: #07748d;
+    margin: 1rem 0;
+}
+
+.texto-catalogo h1 {
+    display: block;
+    font-size: 3rem;
+    letter-spacing: 0.2rem;
+    color: #0bb8e3;
+}
+
+/* --- FILTROS CATÁLOGO --- */
+.navegacionFiltros {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.botonFiltro {
+    padding: 0.8rem 1.5rem;
+    background-color: white;
+    color: #07748d;
+    border: 2px solid #0bb8e3;
+    text-decoration: none;
+    border-radius: 2rem;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.botonFiltro:hover {
+    background-color: #0bb8e3;
+    color: white;
+}
+
+.bloqueCatalogo {
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border-radius: 1rem;
+    transition: background-color 0.5s ease;
+}
+
+.bloqueCatalogo:target {
+    background-color: #e0f7fa;
+    border: 2px solid #0bb8e3;
+}
+
+.tituloFiltro {
+    color: #07748d;
+    margin-bottom: 2rem;
+    text-align: left;
+    border-left: 5px solid #0bb8e3;
+    padding-left: 1rem;
+}
+
+.inputFiltro {
+    display: none;
+}
+
+.botonLabel {
+    padding: 0.8rem 1.5rem;
+    border: 2px solid #0bb8e3;
+    border-radius: 2rem;
+    cursor: pointer;
+    font-weight: bold;
+    color: #07748d;
+    transition: all 0.3s;
+}
+
+.botonLabel:hover {
+    background-color: #0bb8e3;
+    color: white;
+}
+
+#soloPrivadas:checked ~ .contenedorCatalogo .tarjetaComunitaria {
+    display: none;
+}
+
+#soloComunitarias:checked ~ .contenedorCatalogo .tarjetaPrivada {
+    display: none;
+}
+
+#todas:checked ~ .contenedorCatalogo .tarjetaPiscina {
+    display: block;
+}
+
+/* --- MANTENIMIENTO --- */
+.seccionMantenimiento {
+    padding: 4rem 2rem;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.textoMantenimiento h1 {
+    color: #07748d;
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.textoMantenimiento p {
+    max-width: 50rem;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    color: #444;
+}
+
+.comparativaPiscinas {
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.comparativaPiscinas h2 {
+    font-size: 2.2rem;
+    color: #07748d;
+}
+
+.subtitulo {
+    margin-bottom: 3rem;
+    color: #666;
+}
+
+.contenedorTarjetas {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap; 
+    max-width: 75rem;
+    margin: 0 auto;
+}
+
+.tarjetaMantenimiento {
+    flex: 1;
+    min-width: 20rem;
+    padding: 2rem;
+    border-radius: 1.5rem;
+    background: white;
+    box-shadow: 0 1rem 2rem rgba(0,0,0,0.05);
+    border: 2px solid #eee;
+    text-align: left;
+    transition: transform 0.3s ease;
+}
+
+.tarjetaMantenimiento:hover {
+    transform: scale(1.02);
+    border-color: #0bb8e3;
+}
+
+.tarjetaMantenimiento h3 {
+    font-size: 1.8rem;
+    color: #07748d;
+    margin-top: 0;
+}
+
+.lista-ventajas h4 {
+    margin-top: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #0bb8e3;
+    display: inline-block;
+}
+
+.lista-ventajas ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 1rem;
+}
+
+.lista-ventajas ul li {
+    margin-bottom: 0.8rem;
+    padding-left: 1.5rem;
+    position: relative;
+    font-size: 0.95rem;
+}
+
+.check {
+    position: absolute;
+    left: 0;
+    color: #2ecc71;
+    font-weight: bold;
+}
+
+.error {
+    position: absolute;
+    left: 0;
+    color: #e74c3c;
+    font-weight: bold;
+}
+
+
+
+/* VIDEO */
+.seccionVideo {
+    padding: 4rem 2rem;
+    text-align: center;
+    background-color: #fff; 
+}
+
+.seccionVideo h2 {
+    color: #07748d;
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+}
+
+.seccionVideo p {
+    color: #666;
+    margin-bottom: 2rem;
+}
+
+.contenedorVideo {
+    max-width: 50rem;
+    margin: 0 auto;
+    border-radius: 1.5rem;
+    overflow: hidden; 
+    box-shadow: 0 1rem 3rem rgba(0,0,0,0.2);
+    border: 0.5rem solid #0bb8e3;
+}
+
+.videoMantenimiento {
+    width: 100%;
+    display: block; 
+    background-color: black;
+}
+
+/* SOBRE NOSOTROS */
+.sobreNosotrosContenido {
+    background-image: linear-gradient(rgba(7, 116, 141, 0.8), rgba(7, 116, 141, 0.8)), url('https://www.fluidra.com/wp-content/uploads/2023/07/Aqua-27-1.webp');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 6rem 2rem;
+    text-align: center;
+}
+
+.sobreNosotrosContenido h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.nuestraHistoria {
+    padding: 5rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.contenedorHistoria {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    flex-wrap: wrap;
+}
+
+.textoHistoria {
+    flex: 1;
+    min-width: 300px;
+}
+
+.textoHistoria h2 {
+    color: #07748d;
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.textoHistoria p {
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 1rem;
+}
+
+.imagenHistoria {
+    flex: 1;
+    min-width: 300px;
+}
+
+.imagenHistoria img {
+    width: 100%;
+    border-radius: 1rem;
+    box-shadow: 0 1rem 2rem rgba(0,0,0,0.1);
+}
+
+.nuestrosValores {
+    display: flex;
+    justify-content: space-around;
+    background-color: #0bb8e3;
+    padding: 4rem 2rem;
+    color: white;
+    text-align: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.valor h3 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.valor p {
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+/* CONTACTO */
+.seccionContacto {
+    padding: 5rem 2rem;
+    background-color: #f4f4f4;
+}
+
+.contenedorContacto {
+    display: flex;
+    max-width: 1100px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    box-shadow: 0 1rem 3rem rgba(0,0,0,0.1);
+}
+
+.infoContacto {
+    flex: 1;
+    background-color: #07748d;
+    color: white;
+    padding: 3rem;
+}
+
+.infoContacto h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.bloqueInfo {
+    margin-top: 2rem;
+}
+
+.bloqueInfo h3 {
+    margin-bottom: 0.2rem;
+    font-size: 1.1rem;
+}
+
+.formularioContacto {
+    flex: 1.5;
+    padding: 3rem;
+}
+
+.campoForm {
+    margin-bottom: 1.5rem;
+}
+
+.campoForm label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.campoForm input, .campoForm select, .campoForm textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 0.5rem;
+    font-family: inherit;
+}
+
+.botonEnviar {
+    width: 100%;
+    padding: 1rem;
+    background-color: #0bb8e3;
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.botonEnviar:hover {
+    background-color: #07748d;
+}
+
+/* PAGINA DETALLE */
+.seccionDetalle {
+    padding: 4rem 2rem;
+    background-color: #fff;
+}
+
+.contenedorDetalle {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 4rem;
+    flex-wrap: wrap;
+}
+
+.columnaImagen {
+    flex: 1;
+    margin: 5rem auto;
+    margin-right: 4rem;
+}
+
+.fotoPrincipal {
+    width: 100%;
+    border-radius: 1.5rem;
+    box-shadow: 0 0.5rem 2rem black;
+}
+
+.columnaInfo {
+    flex: 1;
+    min-width: 350px;
+}
+
+.migasPan {
+    font-size: 0.9rem;
+    color: #888;
+    margin-bottom: 1rem;
+}
+
+.migasPan a {
+    color: #0bb8e3;
+    text-decoration: none;
+}
+
+.etiquetaCategoria {
+    display: inline-block;
+    background-color: #e0f7fa;
+    color: #07748d;
+    padding: 0.3rem 1rem;
+    border-radius: 1rem;
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+}
+
+.tablaEspecificaciones {
+    width: 100%;
+    margin: 2rem 0;
+    border-collapse: collapse;
+}
+
+.tablaEspecificaciones td {
+    padding: 0.8rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+.accionesDetalle {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.botonVolver {
+    text-align: center;
+    color: #07748d;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.botonVolver:hover {
+    text-decoration: underline;
+}
+
+/* FOOTER Y SVG */
+svg {
+    display: block;
+    width: 100%;
+    margin-bottom: -1px;
+}
+
+.footer {
+    background-color: #0bb8e3; 
+    color: white;
+    text-align: center;
+    padding: 2rem 0; 
+    margin: 0;
+}
+
+.footer p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+.redesSociales {
+    margin-top: 1rem; 
+}
+
+.redesSociales a {
+    color: white;
+    text-decoration: none;
+    margin: 0 0.6rem;
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.redesSociales a:hover {
+    color: #07748d;
+}
+
+/* ESTILOS RESPONSIVE */
+@media (max-width: 768px) {
+
+    /* Index.html y nav bar */
+
+    /* Ocultar el logo y el anuncio */
+    .logo, .anuncioPrincipal {
+        display: none;
+    }
+
+    /* Poner la navegación vertical */
+    nav ul {
+        flex-direction: column;
+        padding: 1.5rem 0;
+    }
+
+    nav li {
+        margin: 0.5rem 0;
+    }
+
+    /* Cambiar la estructura del parrafo */
+    .construccionContenido, .contenedorTarjetas, .contenedorHistoria, .contenedorDetalle {
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* Poner que la descripcion ocupe todo el ancho */
+    .construccionDescripcion {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    /* Quitar el iframe */
+    .construccionContenido iframe {
+        display: none;
+    }
+
+    .contenedorImagen {
+        display: none;
+    }
+
+    /* Catalogo */
+
+    /* Cambiar la estructura de los filtros */
+    .navegacionFiltros {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    /* Cambiar el tamaño de los botones */
+    .botonFiltro, .botonLabel {
+        width: 100% ;
+        box-sizing: border-box;
+    }
+
+    /* Pongo el contenedor de las tarjetas en una sola columna */ 
+    .contenedorCatalogo {
+        grid-template-columns: 1fr;
+    }
+
+    /* Detalle */
+
+    /* Quitamos la imagen */
+    .columnaImagen {
+        display: none;
+    }
+
+    /* Quitamos el padding y margin de la sección */
+    .seccionDetalle {
+        padding: 0;
+        margin: 0;
+        width: 100%;
+    }
+
+    /* Informacion de la tarjeta */
+    .columnaInfo {
+        width: 100%;
+        padding: 2rem 1.5rem;
+        box-sizing: border-box;
+
+    }
+
+    /* Cambiamos la estructura de las acciones */
+    .accionesDetalle {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    /* Cambiamos el tamaño del boton */
+    .botonPresupuesto {
+        width: 80%;
+        text-align: center;
+    }
+
+    /* Mantenimiento */
+
+    .seccionMantenimiento, .comparativaPiscinas {
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .textoMantenimiento, .comparativaPiscinas h2, .subtitulo {
+        padding: 2rem 1.5rem;
+        text-align: center;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .contenedorTarjetas {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        padding: 0 1rem;
+        box-sizing: border-box;
+        gap: 2rem;
+    }
+    
+    .tarjetaMantenimiento {
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    /* Sobre nosotros */
+
+    .nuestrosValores {
+        display: none;
+    }
+
+    /* Contacto */
+
+    .contenedorContacto {
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* Ajuste del bloque de información */
+    .infoContacto p {
+        display: none;
+    }
+
+    .infoContacto div {
+        display: none;
+    }
+
+    /* El formulario ocupa todo el ancho */
+    .campoForm input, .campoForm select, .campoForm textarea {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+}

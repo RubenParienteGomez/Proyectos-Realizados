@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>ModeGaming - Sobre Nosotros</title>
+    <link rel="stylesheet" href="css/sobre-nosotros.css">
+    <link rel="stylesheet" href="css/index.css">
+<style>
+body {
+    background-color: var(--color-fondo);
+    margin: 0;
+    padding: 0;
+}
+
+footer, .header {
+    background-color: var(--color-fondo-secundario);
+    margin: 0;
+}
+
+/* Navbar */
+.navbar {
+    background-color: var(--color-fondo-secundario);
+    padding: 15px 0;
+}
+
+.navbar-content {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+}
+
+.navbar-logo img {
+    width: 100px;
+    height: auto;
+    display: block;
+}
+
+.navbar-enlaces {
+    justify-self: end;
+    display: flex;
+    gap: 2rem;
+}
+
+.navbar-enlaces a {
+    color: var(--color-texto);
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    transition: var(--transicion);
+    position: relative;
+}
+
+.navbar-enlaces a:hover {
+    color: var(--color-primario);
+}
+
+.navbar-enlaces a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: var(--color-primario);
+    transition: width 0.3s;
+}
+
+.navbar-enlaces a:hover::after {
+    width: 100%;
+}
+
+/* Footer */
+.footer {
+    color: var(--color-texto);
+    padding: 20px 0;
+}
+
+.footer-content {
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.footer-logo img {
+    width: 120px;
+    border-radius: var(--radio-bordes);
+}
+
+.footer-logo {
+    justify-self: start;
+}
+
+.footer-copy {
+    justify-self: center;
+    text-align: center;
+    font-size: 14px;
+}
+
+.footer-redes{
+    justify-self: end;
+    display: flex;
+    gap: 1rem;
+}
+
+.footer-redes a {
+    color: white;
+    font-size: 20px;
+    transition: 0.3s;
+}
+
+.footer-redes img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    transition: transform 0.3s;
+}
+
+.footer-redes img:hover {
+    transform: scale(1.2);
+}
+
+.footer-links {
+    margin-top: 8px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.footer-links a {
+    color: #ddd;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.footer-links a:hover {
+    color: #ffffff;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .footer-content {
+        display: grid;
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .footer-logo, .footer-copy, .footer-redes {
+        justify-self: center;
+    }
+
+    .footer-redes {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 1024px) {
+    .footer-content {
+        max-width: 900px;
+    }
+
+    .footer-logo img {
+        width: 100px;
+    }
+
+    .footer-redes img {
+        width: 35px;
+        height: 35px;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        text-align: center;
+    }
+
+    .footer-logo,
+    .footer-copy,
+    .footer-redes {
+        justify-self: center;
+    }
+
+    .footer-copy {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer {
+        padding: 15px 0;
+    }
+
+    .footer-logo img {
+        width: 80px;
+    }
+
+    .footer-copy {
+        font-size: 12px;
+        padding: 0 10px;
+    }
+
+    .footer-redes {
+        gap: 0.5rem;
+    }
+
+    .footer-redes img {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+@media (min-width: 1400px) {
+    .footer-content {
+        max-width: 1400px;
+    }
+
+    .footer-copy {
+        font-size: 15px;
+    }
+
+    .footer-redes img {
+        width: 45px;
+        height: 45px;
+    }
+}
+</style>
+</head>
+<body>
+<nav class="navbar">
+    <div class="navbar-content">
+
+        <!-- Logo -->
+        <a class="navbar-logo" href="/">
+            <img src="imagenes/logo-ModeGaming.png" alt="Logo de ModeGaming">
+        </a>
+
+        <!-- Enlaces -->
+        <div class="navbar-enlaces">
+            <a href="/">Inicio</a>
+            <a href="/categorias">Categorías</a>
+            <a href="/productos">Productos</a>
+        </div>
+
+    </div>
+</nav>
+<div class="container">
+
+    <!-- Presentación Tienda -->
+    <div class="box tienda">
+        <div class="text">
+            <h2>Somos ModeGaming</h2>
+            <p>
+                En ModeGaming vivimos la pasión por los videojuegos tanto como tú. 
+                Somos una tienda online especializada en consolas, creada por gamers 
+                que buscan ofrecer calidad, claridad y la mejor experiencia posible.
+            </p>
+        </div>
+        <div class="img-placeholder"></div>
+    </div>
+
+    <!-- Presentación Equipo -->
+    <div class="box equipo">
+        <h2>Presentación Equipo</h2>
+        <div class="team-container">
+            <div class="team-member">
+                <div class="img-placeholder">
+                    <img src="imagenes/equipo/juanma.png" alt="">
+                </div>
+                <p>
+                    <strong>Juan Manuel Perdomo</strong><br>
+                    Co-founder & Programador<br>
+                    Desarrollo web y experiencia de usuario.
+                </p>
+            </div>
+
+            <div class="team-member">
+                <div class="img-placeholder">
+                     <img src="imagenes/equipo/ruben.png" alt="">
+                </div>
+                <p>
+                    <strong>Ruben Pariente</strong><br>
+                    Co-founder & Programador<br>
+                    Sistemas y optimización de la plataforma.
+                </p>
+            </div>
+
+            <div class="team-member">
+                <div class="img-placeholder">
+                     <img src="imagenes/equipo/antonio.png" alt="">
+                </div>
+                <p>
+                    <strong>Antonio Garcia</strong><br>
+                    Co-founder & Programador<br>
+                    Mejora continua y nuevas funcionalidades.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Nuestra Historia -->
+    <div class="box historia">
+        <div class="text">
+            <h2>Nuestra historia</h2>
+            <p>
+                ModeGaming nace entre amigos apasionados por el gaming. 
+                Cansados de tiendas sin enfoque claro, decidimos crear 
+                una plataforma centrada únicamente en consolas, sin 
+                complicaciones y pensada por gamers reales.
+            </p>
+        </div>
+        <div class="img-placeholder"></div>
+    </div>
+</div>
+
+<footer class="footer">
+    <div class="footer-content">
+
+        <!-- Logo -->
+        <div class="footer-logo">
+            <img src="imagenes/logo-ModeGaming.png" alt="Logo de ModeGaming">
+        </div>
+
+        <!-- Copy & Enlaces-->
+        <div class="footer-copy">
+            <p>© 2026 ModeGaming - Todos los derechos reservados</p>
+
+            <div class="footer-links">
+                <a href="sobre-nosotros.html">Sobre nosotros</a>
+                <a href="condiciones.html">Condiciones</a>
+            </div>
+        </div>
+
+        <!-- Redes sociales -->
+        <div class="footer-redes">
+            <a href="https://www.instagram.com/">
+                <img src="imagenes/redes/instaLogo.png" alt="Instagram">
+            </a>
+            <a href="https://x.com/">
+                <img src="imagenes/redes/twitterLogo.png" alt="Twitter">
+            </a>
+            <a href="https://www.facebook.com/">
+                <img src="imagenes/redes/facebookLogo.png" alt="Facebook">
+            </a>
+            <a href="https://www.youtube.com/">
+                <img src="imagenes/redes/youtubeLogo.png" alt="YouTube">
+            </a>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

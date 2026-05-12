@@ -1,0 +1,120 @@
+.navbar {
+    background-color: var(--color-fondo-secundario);
+    padding: 15px 0;
+    border-bottom: 1px solid var(--color-borde);
+}
+
+.navbar-content {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 2rem;
+}
+
+.navbar-logo img {
+    width: 110px;
+    height: auto;
+    display: block;
+}
+
+.navbar-enlaces {
+    justify-self: center;
+    display: flex;
+    gap: 2rem;
+}
+
+.navbar-enlaces a {
+    color: var(--color-texto);
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    transition: var(--transicion);
+    position: relative;
+}
+
+.navbar-enlaces a:hover {
+    color: var(--color-primario);
+}
+
+.navbar-enlaces a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: var(--color-primario);
+    transition: var(--transicion);
+}
+
+.navbar-enlaces a:hover::after {
+    width: 100%;
+}
+
+.navbar-user {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.user-name {
+    color: var(--color-texto-secundario);
+    font-size: 0.85rem;
+}
+
+.user-email {
+    color: var(--color-primario);
+    font-weight: bold;
+}
+
+.btn-logout {
+    background: transparent;
+    border: 1px solid var(--color-error);
+    color: var(--color-error);
+    padding: 6px 12px;
+    cursor: pointer;
+    border-radius: var(--radio-bordes);
+    font-size: 14px;
+    transition: var(--transicion);
+}
+
+.btn-logout:hover {
+    background-color: var(--color-error);
+    color: var(--color-texto);
+}
+
+.btn-login {
+    color: var(--color-texto);
+    text-decoration: none;
+    font-size: 15px;
+    transition: var(--transicion);
+}
+
+.btn-login:hover {
+    color: var(--color-primario);
+}
+
+
+.btn-registro {
+    background: var(--color-primario);
+    color: var(--color-fondo);
+    padding: 8px 16px;
+    border-radius: var(--radio-bordes);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    transition: var(--transicion);
+}
+
+.btn-registro:hover {
+    background: var(--color-primario-hover);
+    box-shadow: var(--sombra-card);
+}
+
+.link-admin {
+    color: var(--color-secundario) !important;
+    font-weight: bold;
+}

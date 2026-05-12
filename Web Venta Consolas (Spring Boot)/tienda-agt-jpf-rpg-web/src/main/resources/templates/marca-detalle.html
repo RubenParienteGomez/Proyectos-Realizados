@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${marca.nombre}">Marca</title>
+
+    <link rel="stylesheet" th:href="@{/css/index.css}">
+    <link rel="stylesheet" th:href="@{/css/marca-detalle.css}">
+    <link rel="stylesheet" th:href="@{/css/footer.css}">
+    <link rel="stylesheet" th:href="@{/css/navbar.css}">
+</head>
+<body>
+
+<!-- Navbar -->
+<div th:replace="fragmentos/navbar :: navbar"></div>
+
+<!-- HERO MARCA -->
+<div class="marca-hero">
+    <h1 th:text="${marca.nombre}">Nombre Marca</h1>
+    <p>Explora todos los productos disponibles de esta marca</p>
+</div>
+
+<!-- LISTADO PRODUCTOS -->
+<div class="marca-page">
+    <div class="marca-container">
+
+        <div class="producto-card" th:each="producto : ${productos}">
+
+            <!-- Imagen -->
+            <img class="producto-img"
+                 th:src="@{${producto.imagen}}"
+                 th:onerror="|this.onerror=null; this.src='@{/imagenes/no-disponible.jpg}';|"
+                 th:alt="${producto.nombre}">
+
+            <!-- Info -->
+            <div class="producto-info">
+                <h3 th:text="${producto.nombre}">Nombre</h3>
+                <p th:text="${producto.descripcion}">Descripción</p>
+            </div>
+
+            <!-- Acción -->
+            <div class="producto-action">
+                <a class="producto-btn"
+                   th:href="@{'/productos/' + ${producto.id}}">
+                    Ver producto
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Una marca sin productos -->
+    <p class="sin-productos" th:if="${#lists.isEmpty(productos)}">
+        Esta marca no tiene productos disponibles.  
+    </p>
+</div>
+
+<!-- Footer -->
+<div th:replace="fragmentos/footer :: footer"></div>
+
+</body>
+</html>

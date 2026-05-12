@@ -1,0 +1,44 @@
+=======================
+==COMANDOS DE CLIENTE==
+=======================
+------------------------------------------------------------------------------------------
+/ayuda - Muestra esta ayuda.
+------------------------------------------------------------------------------------------
+/quien_soy - Muestra información del usuario: nombre, rol, sala actual y tiempo conectado.
+------------------------------------------------------------------------------------------
+/salas - Lista las salas disponibles para clientes y el número de usuarios en cada una.
+------------------------------------------------------------------------------------------
+/usuarios <sala> - Muestra los usuarios de una sala. - Error si falta la sala o no existe.
+------------------------------------------------------------------------------------------
+/unirse <sala> - Cambia al usuario a otra sala. - Error si falta la sala o no existe.
+------------------------------------------------------------------------------------------
+/ping <usuario> - Comprueba si un usuario está en la misma sala.
+------------------------------------------------------------------------------------------
+/mensaje <mensaje> - Envía un mensaje a todos los usuarios de la sala actual.
+------------------------------------------------------------------------------------------
+/mensaje <mensaje> <usuario> - Envía un mensaje privado a un usuario de la misma sala.
+------------------------------------------------------------------------------------------
+/abandona - Desconecta al usuario del servidor.
+------------------------------------------------------------------------------------------
+===========================
+=COMANDOS DE ADMINISTRADOR=
+===========================
+------------------------------------------------------------------------------------------
+/ayuda - Muestra la ayuda de administrador.
+------------------------------------------------------------------------------------------
+/salas - Lista todas las salas, tipo y usuarios.
+------------------------------------------------------------------------------------------
+/crea <sala> [aforo] - Crea una sala nueva.
+------------------------------------------------------------------------------------------
+/elimina <sala> - Elimina una sala si está vacía.
+------------------------------------------------------------------------------------------
+/elimina_forzado <sala> - Elimina una sala enviando a los usuarios a recepcion.
+------------------------------------------------------------------------------------------
+/cambia_aforo <sala> <aforo> - Cambia el aforo de una sala.
+------------------------------------------------------------------------------------------
+/expulsa <usuario> [mensaje] - Expulsa a un usuario (no administradores).
+------------------------------------------------------------------------------------------
+/mensaje_todos <mensaje> - Envía un mensaje a todos los usuarios.
+------------------------------------------------------------------------------------------
+/apaga - Apaga el servidor.
+------------------------------------------------------------------------------------------

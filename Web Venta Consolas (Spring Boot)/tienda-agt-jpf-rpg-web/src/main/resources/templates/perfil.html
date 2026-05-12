@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <title>Mi Perfil | ModeGaming</title>
+    <link rel="stylesheet" th:href="@{/css/index.css}">
+    <link rel="stylesheet" th:href="@{/css/navbar.css}">
+    <link rel="stylesheet" th:href="@{/css/footer.css}">
+    <link rel="stylesheet" th:href="@{/css/perfil.css}">
+</head>
+<body>
+    <div th:replace="fragmentos/navbar :: navbar"></div>
+
+    <main class="perfil-container">
+        <header class="perfil-header">
+            <h1>Perfil de Usuario</h1>
+        </header>
+
+        <div class="perfil-grid">
+            <aside class="perfil-card">
+                <div class="avatar-placeholder" th:text="${#strings.substring(usuario.nombre,0,1)}">U</div>
+                <h2 th:text="${usuario.nombre + ' ' + usuario.apellidos}">Nombre Usuario</h2>
+                <p style="color: var(--color-texto-secundario);" th:text="${usuario.email}">email@ejemplo.com</p>
+                
+                <div class="roles-container">
+                    <span th:each="rol : ${usuario.roles}" 
+                          class="badge-rol" 
+                          th:text="${rol.id}">ROL</span>
+                </div>
+            </aside>
+
+            <section class="perfil-detalles">
+                <div class="detalle-grupo">
+                    <span class="detalle-label">Nombre Completo</span>
+                    <span class="detalle-valor" th:text="${usuario.nombre + ' ' + usuario.apellidos}">Nombre Apellido</span>
+                </div>
+
+                <div class="detalle-grupo">
+                    <span class="detalle-label">Correo Electrónico</span>
+                    <span class="detalle-valor" th:text="${usuario.email}">email@tienda.com</span>
+                </div>
+
+                <div class="detalle-grupo">
+                    <span class="detalle-label">Miembro desde</span>
+                    <span class="detalle-valor" th:text="${#temporals.format(usuario.fechaRegistro, 'dd MMMM yyyy')}">10 de Mayo 2024</span>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <div th:replace="fragmentos/footer :: footer"></div>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin - Gestión Marca</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/css/admin/adminStyles.css}">
+    <link rel="stylesheet" th:href="@{/css/admin/formStyles.css}">
+</head>
+<body>
+<div class="container py-5">
+
+    <div class="text-center mb-5">
+        <h1 class="fw-bold display-5">
+            <span class="admin-text">ADMIN</span>
+            <span class="neon-blue"> MODEGAMING</span>
+        </h1>
+        <p class="text-secondary">Panel de control y gestión de inventario</p>
+    </div>
+
+    <div class="row justify-content-center">
+        <div class="col-lg-6">
+
+            <h4 class="fw-bold mb-4 text-white text-center">
+                GESTIÓN DE <span class="neon-blue">MARCA</span>
+            </h4>
+
+            <div th:if="${error}" class="alert alert-danger bg-dark text-danger border-danger shadow-sm mb-4">
+                <strong class="me-2">⚠️ Error:</strong>
+                <span th:text="${error}">Error</span>
+            </div>
+
+            <div class="card card-gaming p-4">
+                <form th:action="@{/admin/marcas/save}" th:object="${marca}" method="post">
+
+                    <input type="hidden" th:field="*{id}" />
+
+                    <div class="row g-4">
+                        <div class="col-12">
+                            <label class="form-label">Nombre de la Marca</label>
+                            <input type="text" th:field="*{nombre}" class="form-control" placeholder="Ej: Logitech, Razer, Asus...">
+                        </div>
+                    </div>
+
+                    <div class="mt-4 d-flex justify-content-center gap-3">
+                        <button type="submit" class="btn btn-neon px-4">GUARDAR</button>
+                        <a th:href="@{/admin/marcas}" class="btn btn-outline-secondary px-4">CANCELAR</a>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

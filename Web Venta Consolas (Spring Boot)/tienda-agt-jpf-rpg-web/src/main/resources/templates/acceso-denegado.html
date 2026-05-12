@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Acceso Denegado | ModeGaming</title>
+    <link rel="stylesheet" th:href="@{/css/index.css}">
+    <link rel="stylesheet" th:href="@{/css/navbar.css}">
+    <link rel="stylesheet" th:href="@{/css/footer.css}">
+    <link rel="stylesheet" th:href="@{/css/acceso-denegado.css}">
+</head>
+<body>
+    <div th:replace="fragmentos/navbar :: navbar"></div>
+
+    <main class="error-container">
+        <h1>¡Zona Restringida!</h1>
+        <p>Parece que no tienes los permisos necesarios para acceder a esta sección.</p>
+        
+        <a th:href="@{/}" class="btn-volver">Volver al Inicio</a>
+    </main>
+
+    <div th:replace="fragmentos/footer :: footer"></div>
+</body>
+</html>

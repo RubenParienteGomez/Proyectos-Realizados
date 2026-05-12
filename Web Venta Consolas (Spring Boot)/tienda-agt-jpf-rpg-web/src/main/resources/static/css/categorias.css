@@ -1,0 +1,90 @@
+/* HERO */
+.cats-hero {
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(135deg, var(--color-fondo-secundario), var(--color-fondo));
+}
+
+.cats-hero h1 {
+    font-size: 2.5rem;
+    color: var(--color-primario);
+    margin-bottom: 10px;
+}
+
+.cats-hero p {
+    color: var(--color-texto-secundario);
+}
+
+/* CATEGORÍAS */
+.cats-page {
+    padding: 50px 80px;
+    display: flex;
+    justify-content: center;
+}
+
+.cats-container {
+    max-width: 1400px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 40px;
+}
+
+/* CARD */
+.cat-card {
+    background-color: var(--color-fondo-secundario);
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio-bordes);
+    overflow: hidden;
+    box-shadow: var(--sombra-card);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: var(--transicion);
+}
+
+.cat-card:hover {
+    transform: translateY(-8px);
+}
+
+/* IMG */
+.cat-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+/* INFO */
+.cat-info {
+    padding: 20px;
+}
+
+.cat-info h3 {
+    margin-bottom: 10px;
+    color: var(--color-primario);
+}
+
+.cat-info p {
+    color: var(--color-texto-secundario);
+    font-size: 14px;
+}
+
+/* BOTÓN */
+.cat-action {
+    padding: 15px 20px 20px;
+}
+
+.cat-btn {
+    display: block;
+    text-align: center;
+    background-color: var(--color-primario);
+    color: black;
+    padding: 10px;
+    border-radius: var(--radio-bordes);
+    text-decoration: none;
+    font-weight: bold;
+    transition: var(--transicion);
+}
+
+.cat-btn:hover {
+    background-color: var(--color-primario-hover);
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Categorías</title>
+
+    <link rel="stylesheet" th:href="@{/css/index.css}">
+    <link rel="stylesheet" th:href="@{/css/categorias.css}">
+    <link rel="stylesheet" th:href="@{/css/footer.css}">
+    <link rel="stylesheet" th:href="@{/css/navbar.css}">
+</head>
+<body>
+    <!-- Navbar -->
+    <div th:replace="fragmentos/navbar :: navbar"></div>
+    <!-- Hero -->
+    <div class="cats-hero">
+        <h1>Explora nuestras categorías</h1>
+        <p>Encuentra el tipo de consola perfecto para tu estilo de juego</p>
+    </div>
+
+    <!-- Categorias -->
+    <div class="cats-page">
+        <div class="cats-container">
+            <div class="cat-card" th:each="categoria : ${categorias}">
+                <!-- Imagen -->
+                <img class="cat-img"
+                     th:src="@{${categoria.imagen}}"
+                     th:onerror="|this.onerror=null; this.src='@{/imagenes/no-disponible.jpg}';|"
+                     th:alt="${categoria.nombre}">
+
+                <!-- Info -->
+                <div class="cat-info">
+                    <h3 th:text="${categoria.nombre}">Nombre</h3>
+                    <p th:text="${categoria.descripcion}">Descripción</p>
+                </div>
+
+                <!-- Boton -->
+                <div class="cat-action">
+                    <a class="cat-btn"
+                       th:href="@{'/categorias/' + ${categoria.id}}">
+                        Ver categoría
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div th:replace="fragmentos/footer :: footer"></div>
+</body>
+</html>

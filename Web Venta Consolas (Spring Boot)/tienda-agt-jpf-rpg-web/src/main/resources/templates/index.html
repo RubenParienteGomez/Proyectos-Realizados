@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>ModeGaming</title>
+        <link rel="stylesheet" th:href="@{/css/home.css}">
+        <link rel="stylesheet" th:href="@{/css/index.css}">
+        <link rel="stylesheet" th:href="@{/css/footer.css}">
+        <link rel="stylesheet" th:href="@{/css/navbar.css}">
+    </head>
+    <body>
+    <!-- Navbar -->
+    <div th:replace="fragmentos/navbar :: navbar"></div>
+        <!-- Hero -->
+        <div class="hero">
+            <div class="hero-text">
+                <h1>ModeGaming</h1>
+                <p>
+                    En ModeGaming vivimos la pasión por los videojuegos tanto como tú. Somos tu destino ideal para descubrir las últimas consolas, accesorios y experiencias que te llevan al siguiente nivel. Ya seas un jugador casual o un gamer competitivo, en ModeGaming encontrarás todo lo que necesitas para activar tu modo jugador y disfrutar cada partida como nunca antes.
+                </p>
+            </div>
+            <div class="hero-img">
+                <img th:src="@{/imagenes/home/mando.png}" alt="Mando de playstation">
+            </div>
+        </div>
+
+        <!-- Categorías Destacadas -->
+        <div class="cats">
+            <div class="cats-title">
+                <h1>Categorías Destacadas</h1>
+            </div>
+            <div class="cats-imgs">
+                <div th:each="categoria : ${categorias}" class="">
+                    <h3 th:text="${categoria.nombre}">Nombre Categoría</h3>
+                    <p th:text="${categoria.descripcion}">Descripción</p>
+                    <img class="cats-img" th:src="@{${categoria.imagen}}" 
+                    th:onerror="|this.onerror=null; this.src='@{/imagenes/no-disponible.jpg}';|" 
+                    th:alt="${categoria.nombre}" alt="Categoría"
+                    th:onclick="'location.href=\'/categorias/' + ${categoria.id} + '\';'" 
+                    style="cursor: pointer;">
+                </div>
+            </div>
+        </div>
+
+        <!-- Preguntas Frecuentes -->
+        <div class="faq">
+            <div class="faq-title">
+                <h1>Preguntas Frecuentes</h1>
+            </div> 
+            <div class="faq-questions">
+                <div class="faq-question">
+                    <h3>¿Qué hacer si mi consola se sobrecalienta? </h3>
+                    <p>Asegúrate de que tenga suficiente espacio alrededor para ventilar. La acumulación de polvo puede causar que se apague.</p>
+                </div>
+                <div class="faq-question">
+                    <h3>¿Con qué frecuencia limpiar?</h3>
+                    <p>Se recomienda al menos una vez al mes para evitar acumulación de polvo y sobrecalentamiento.</p>
+                </div>
+                <div class="faq-question">
+                    <h3>¿Qué es el "drift"?</h3>
+                    <p>Si la cámara o personaje se mueve solo, indica un fallo en los joysticks del mando, por lo que deberás cambiarlos.</p>
+                </div>
+                <div class="faq-question">
+                    <h3>¿Modo reposo o apagar?</h3>
+                    <p>Apagar completamente es mejor si no se va a usar durante un tiempo prolongado para ahorrar energía y evitar sobrecalentamiento.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div th:replace="fragmentos/footer :: footer"></div>
+    </body>
+</html>

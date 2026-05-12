@@ -1,0 +1,85 @@
+body {
+    background: linear-gradient(180deg, #0b0e11, #06080a);
+    color: #e1e1e1;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Header */
+.admin-text {
+    color: white;
+}
+
+.neon-blue {
+    color: #00a8e8;
+    text-shadow: 0 0 12px rgba(0, 168, 232, 0.6);
+}
+
+.card-gaming {
+    background-color: #111418;
+    border: 1px solid #2d333b;
+    border-radius: 12px;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
+}
+
+.form-control,
+.form-select,
+textarea.form-control {
+    background-color: #0d1117;
+    border: 1px solid #30363d;
+    color: white;
+}
+
+.form-control:focus,
+.form-select:focus,
+textarea.form-control:focus {
+    background-color: #0d1117;
+    color: white;
+    border-color: #00a8e8;
+    box-shadow: 0 0 10px rgba(0, 168, 232, 0.4);
+}
+
+.form-label {
+    color: #00a8e8;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+}
+
+.form-check-input {
+    background-color: #0d1117;
+    border: 1px solid #30363d;
+}
+
+.form-check-input:checked {
+    background-color: #00a8e8;
+    box-shadow: 0 0 8px rgba(0, 168, 232, 0.7);
+}
+
+.category-box {
+    background-color: #0d1117;
+    border: 1px solid #30363d;
+    border-radius: 8px;
+    padding: 15px;
+}
+
+.btn-neon {
+    background-color: #00a8e8;
+    color: white;
+    font-weight: 600;
+    border: none;
+    transition: 0.3s;
+}
+
+.btn-neon:hover {
+    background-color: #00c3ff;
+    box-shadow: 0 0 15px rgba(0, 168, 232, 0.7);
+}
+
+.btn-outline-secondary {
+    border: 1px solid #30363d;
+    color: #8b949e;
+}
+
+.btn-outline-secondary:hover {
+    background-color: #21262d;
+    color: white;
+}

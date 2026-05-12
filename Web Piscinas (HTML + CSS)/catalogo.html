@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piscinas PH2O</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="img/logo.ico">
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.1.0/uicons-brands/css/uicons-brands.css'>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="catalogo.html">Catalogo de piscinas</a></li>
+                <li><a href="mantenimiento.html">Mantenimiento</a></li>
+                <li class="logo">
+                    <a href="index.html">
+                        <img src="img/logoSimple-negro.png" alt="Logo PH2O" class="logo-negro">
+                        <img src="img/logoSimple-blanco.png" alt="Logo PH2O" class="logo-blanco">
+                    </a>
+                </li>
+                <li><a href="sobrenosotros.html">Sobre nosotros</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="seccionCatalogo">
+            <div class="textoCatalogoTitulo">
+                <h1>Nuestro Catálogo</h1>
+                <p>Selecciona la categoría que le interese para ofrecerle una solución personalizada.</p>
+            </div>
+
+            <input type="radio" name="filtro" id="todas" checked class="inputFiltro">
+            <input type="radio" name="filtro" id="soloPrivadas" class="inputFiltro">
+            <input type="radio" name="filtro" id="soloComunitarias" class="inputFiltro">
+
+            <nav class="navegacionFiltros">
+                <label for="todas" class="botonLabel">Ver Todas</label>
+                <label for="soloPrivadas" class="botonLabel">Privadas</label>
+                <label for="soloComunitarias" class="botonLabel">Comunitarias</label>
+            </nav>
+
+            <div class="contenedorCatalogo">
+                <article class="tarjetaPiscina tarjetaPrivada">
+                    <img src="https://images.trvl-media.com/lodging/35000000/34060000/34053800/34053750/d48bafea.jpg?impolicy=resizecrop&rw=575&rh=575&ra=fill" alt="Piscina Infinita" class="imagenPiscina">
+                    <h3>Piscina Infinita</h3>
+                    <p>Una piscina que no tiene fin</p>
+                    <a href="tiposPiscinas/piscinaInfinita.html" class="botonPresupuesto">Mostrar info</a>
+                </article>
+
+                <article class="tarjetaPiscina tarjetaComunitaria">
+                    <img src="https://www.javea.com/wp-content/uploads/2022/07/piscina-doble-con-aguas-azul-turquesa.jpg" alt="Piscina Comunitaria" class="imagenPiscina">
+                    <h3>Piscina Comunitaria Doble</h3>
+                    <p>Una doble piscina ideal para todas las edades</p>
+                    <a href="tiposPiscinas/comunitariaDoble.html" class="botonPresupuesto">Mostrar info</a>
+                </article>
+
+                <article class="tarjetaPiscina tarjetaPrivada">
+                    <picture>
+                        <source media="(max-width: 600px)" srcset="https://images.unsplash.com/photo-1562133567-b6a0a9c7e6eb?q=80&w=300">
+                        <img src="https://piscinasdtp.com/wp-content/uploads/2024/06/portada-beneficio-de-tener-una-piscina-en-casa.webp" alt="Piscina Familiar" class="imagenPiscina">
+                    </picture>
+                    <h3>Piscina Familiar Rectangular</h3>
+                    <p>La piscina ideal para toda la familia</p>
+                    <a href="tiposPiscinas/familiarRectangular.html" class="botonPresupuesto">Mostrar info</a>
+                </article>
+
+                <article class="tarjetaPiscina tarjetaComunitaria">
+                    <img src="https://ciudadycomunidad.cafmadrid.es/wp-content/uploads/2017/06/piscina-comunitaria-adaptada-a-la-normativa-de-clm_1.jpg" alt="Piscina Comunitaria" class="imagenPiscina">
+                    <h3>Piscina Comunitaria Rectangular</h3>
+                    <p>La piscina perfecta para toda la comunidad</p>
+                    <a href="tiposPiscinas/comunitariaRectangular.html" class="botonPresupuesto">Mostrar info</a>
+                </article>
+
+                <article class="tarjetaPiscina tarjetaPrivada">
+                    <img src="https://fotos.imghs.net/media/pisosblog/2017/08/piscina4.jpg" alt="Piscina Infinita" class="imagenPiscina">
+                    <h3>Piscina Familiar Circular</h3>
+                    <p>Una piscina ideal para toda la familia de forma circular</p>
+                    <a href="tiposPiscinas/familiarCircular.html" class="botonPresupuesto">Mostrar info</a>
+                </article>
+
+                <article class="tarjetaPiscina tarjetaComunitaria">
+                    <img src="https://www.hernandezmartincb.com/wp-content/uploads/2021/10/hernandez-martin-construcciones-y-piscinas-experiencia-obra-piscina-zamora-salamanca-valladolid-circular-ameba.jpg" alt="Piscina Comunitaria" class="imagenPiscina">
+                    <h3>Piscina Comunitaria Circular</h3>
+                    <p>La piscina perfecta para la comunidad de forma circular</p>
+                    <a href="tiposPiscinas/comunitariaCircular.html" class="botonPresupuesto">Mostrar info</a>
+                </article>
+            </div>
+        </section>
+    </main>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#0bb8e3" fill-opacity="1" d="M0,288L34.3,277.3C68.6,267,137,245,206,229.3C274.3,213,343,203,411,197.3C480,192,549,192,617,202.7C685.7,213,754,235,823,218.7C891.4,203,960,149,1029,133.3C1097.1,117,1166,139,1234,149.3C1302.9,160,1371,160,1406,160L1440,160L1440,320L1405.7,320C1371.4,320,1303,320,1234,320C1165.7,320,1097,320,1029,320C960,320,891,320,823,320C754.3,320,686,320,617,320C548.6,320,480,320,411,320C342.9,320,274,320,206,320C137.1,320,69,320,34,320L0,320Z"></path></svg>
+    <footer class="footer">
+        <p>&copy; 2026 Piscinas PH2O. Todos los derechos reservados.</p>
+        <div class="redesSociales">
+            <a href="https://www.instagram.com" target="_blank">
+                <i class="fi fi-brands-instagram"></i>
+            </a>
+            <a href="https://www.facebook.com" target="_blank">
+                <i class="fi fi-brands-facebook"></i>
+            </a>
+            <a href="https://www.whatsapp.com" target="_blank">
+                <i class="fi fi-brands-whatsapp"></i>
+            </a>
+        </div>
+    </footer>
+</body>
+</html>

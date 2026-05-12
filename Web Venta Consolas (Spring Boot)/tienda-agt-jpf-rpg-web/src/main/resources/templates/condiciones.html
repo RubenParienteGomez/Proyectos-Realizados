@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Condiciones | ModeGaming</title>
+
+	<link rel="stylesheet" th:href="@{/css/index.css}">
+    <link rel="stylesheet" th:href="@{/css/navbar.css}">
+	<link rel="stylesheet" th:href="@{/css/condiciones.css}">
+	<link rel="stylesheet" th:href="@{/css/footer.css}">
+</head>
+<body>
+    <div th:replace="fragmentos/navbar :: navbar"></div>
+
+	<section class="condiciones-hero">
+		<h1>Condiciones de compra</h1>
+		<p>Consulta las condiciones generales para comprar en ModeGaming.</p>
+		<span class="condiciones-update">Ultima actualizacion: abril de 2026</span>
+	</section>
+
+	<main class="condiciones-page">
+		<section class="condiciones-card">
+			<h2>1. Ambito de aplicacion</h2>
+			<p>
+				Estas condiciones se aplican a todas las compras realizadas en ModeGaming.
+				Al confirmar un pedido, aceptas el contenido de esta pagina.
+			</p>
+		</section>
+
+		<section class="condiciones-card">
+			<h2>2. Pedidos y pagos</h2>
+			<p>
+				Los pedidos quedan sujetos a disponibilidad de stock y validacion del pago.
+				El precio final mostrado en el carrito incluye impuestos aplicables.
+			</p>
+		</section>
+
+		<section class="condiciones-card">
+			<h2>3. Envios</h2>
+			<p>
+				El plazo estimado de entrega se muestra durante el proceso de compra.
+				En periodos de alta demanda, los tiempos podrian ampliarse ligeramente.
+			</p>
+		</section>
+
+		<section class="condiciones-card">
+			<h2>4. Devoluciones</h2>
+			<p>
+				Puedes solicitar la devolucion dentro del plazo legal vigente, siempre que el producto
+				se encuentre en buen estado y con su embalaje original.
+			</p>
+		</section>
+
+		<section class="condiciones-card">
+			<h2>5. Garantia</h2>
+			<p>
+				Todos los productos cuentan con la garantia legal correspondiente.
+				Para tramitar incidencias, conserva el justificante de compra.
+			</p>
+		</section>
+
+		<section class="condiciones-card">
+			<h2>6. Contacto</h2>
+			<p>
+				Si tienes dudas sobre estas condiciones, puedes contactar con nuestro equipo
+				de atencion al cliente mediante los canales habituales de la tienda.
+			</p>
+		</section>
+	</main>
+
+	<div th:replace="fragmentos/footer :: footer"></div>
+</body>
+</html>
+

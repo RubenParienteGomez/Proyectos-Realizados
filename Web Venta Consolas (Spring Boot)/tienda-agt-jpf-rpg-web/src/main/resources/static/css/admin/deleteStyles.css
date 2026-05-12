@@ -1,0 +1,38 @@
+.card-delete {
+    background-color: #111418;
+    border: 2px solid #da3633;
+    border-radius: 15px;
+    box-shadow: 0 0 30px rgba(218, 54, 51, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.card-delete::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, #da3633, transparent);
+}
+
+.btn-danger-gaming {
+    background-color: #da3633;
+    color: white;
+    font-weight: 700;
+    border: none;
+    transition: 0.3s;
+    letter-spacing: 1px;
+}
+
+.btn-danger-gaming:hover {
+    background-color: #f85149;
+    color: white;
+    box-shadow: 0 0 20px rgba(218, 54, 51, 0.6);
+    transform: scale(1.05);
+}
+
+.bi-exclamation-octagon {
+    filter: drop-shadow(0 0 10px rgba(218, 54, 51, 0.5));
+}

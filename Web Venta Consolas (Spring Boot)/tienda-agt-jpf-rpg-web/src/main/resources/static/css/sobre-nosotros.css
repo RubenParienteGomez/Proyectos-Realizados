@@ -1,0 +1,125 @@
+/* CONTENEDOR GENERAL */
+.container {
+    max-width: 1400px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+/* CAJAS GENERALES */
+.box {
+    border-radius: var(--radio-bordes);
+    padding: 25px;
+    margin-bottom: 25px;
+    border: 1px solid var(--color-borde);
+    background-color: var(--color-fondo-secundario);
+    box-shadow: var(--sombra-card);
+    transition: var(--transicion);
+}
+
+.box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+}
+
+/* TITULOS */
+h2 {
+    margin-top: 0;
+    color: var(--color-primario);
+    letter-spacing: 1px;
+}
+
+/* TEXTO */
+p {
+    color: var(--color-texto-secundario);
+    line-height: 1.6;
+}
+
+/* SECCIONES ESPECIFICAS */
+.tienda, .historia {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.text {
+    width: 65%;
+}
+
+.img-placeholder:hover {
+    border-color: var(--color-primario);
+}
+
+/* EQUIPO */
+.equipo {
+    text-align: center;
+}
+
+.team-container {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 10px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.team-member {
+    width: 30%;
+    background-color: var(--color-fondo);
+    padding: 15px;
+    border-radius: var(--radio-bordes);
+    border: 1px solid var(--color-borde);
+    transition: var(--transicion);
+}
+
+/* IMÁGENES DE MIEMBROS */
+.team-member img {
+    width: 130px;
+    height: 130px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid var(--color-borde);
+    margin-bottom: 10px;
+    transition: var(--transicion);
+}
+
+.team-member img:hover {
+    border-color: var(--color-secundario);
+    transform: scale(1.08);
+}
+
+.team-member:hover {
+    transform: scale(1.05);
+    border-color: var(--color-secundario);
+}
+
+/* TEXTO DE MIEMBROS */
+.team-member p {
+    font-size: 14px;
+}
+
+.team-member strong {
+    color: var(--color-primario);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+
+    .tienda, .historia {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .text {
+        width: 100%;
+    }
+
+    .team-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .team-member {
+        width: 80%;
+    }
+}

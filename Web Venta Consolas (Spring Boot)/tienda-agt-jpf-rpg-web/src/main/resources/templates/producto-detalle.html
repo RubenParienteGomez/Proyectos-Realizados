@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${producto.nombre}"></title>
+
+    <link rel="stylesheet" th:href="@{/css/index.css}">
+    <link rel="stylesheet" th:href="@{/css/navbar.css}">
+    <link rel="stylesheet" th:href="@{/css/footer.css}">
+    <link rel="stylesheet" th:href="@{/css/producto-detalle.css}">
+</head>
+
+<body>
+
+<div th:replace="~{fragmentos/navbar :: navbar}"></div>
+
+<div class="prod-detalle">
+
+    <div class="detalle-img">
+        <img
+             th:if="${producto.imagen != null and !producto.imagen.isEmpty()}"
+             th:src="${producto.imagen}"
+             th:onerror="this.onerror=null;this.src='/imagenes/no-disponible.jpg';this.alt='';"
+             th:alt="${'Imagen de ' + producto.nombre}">
+    </div>
+
+    <div class="detalle-info">
+
+        <h1 th:text="${producto.nombre}"></h1>
+
+        <!-- Marca -->
+        <a th:href="@{/marcas/{id}(id=${producto.marca.id})}"
+            th:text="${producto.marca.nombre}"
+            class="producto-marca">
+        </a>
+
+        <!-- CATEGORÍAS DEL PRODUCTO -->
+        <div class="producto-categorias">
+
+            <!-- Sin categorías -->
+            <div th:if="${#lists.isEmpty(producto.categorias)}"
+                class="cat-vacia">
+                <span>Sin categorías</span>
+            </div>
+
+            <!-- Una categoría -->
+            <p th:if="${!#lists.isEmpty(producto.categorias)} and ${producto.categorias.size() == 1}"
+            class="cat-single">
+                <span>Categoría: </span>
+                <a th:href="@{'/categorias/' + ${producto.categorias[0].id}}"
+                th:text="${producto.categorias[0].nombre}">
+                </a>
+            </p>
+
+            <!-- Varias categorías -->
+            <div th:if="${producto.categorias != null and producto.categorias.size() > 1}"
+                class="cat-multiple">
+                <span>Categorías:</span>
+                <ul>
+                    <li th:each="cat : ${producto.categorias}">
+                        <a th:href="@{'/categorias/' + ${cat.id}}"
+                        th:text="${cat.nombre}">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Precio -->
+        <div class="detalle-precio">
+
+            <!-- Con descuento -->
+            <div th:if="${producto.descuento > 0}" class="precio-con-descuento">
+
+        <span class="precio-final"
+              th:text="${#numbers.formatDecimal(producto.precio * (1 - producto.descuento / 100.0), 1, 2)} + ' €'"></span>
+
+                <span class="precio-original"
+                      th:text="${producto.precio} + ' €'"></span>
+
+                <!-- Descuento porcentaje -->
+                <span class="detalle-tag"
+                      th:text="${producto.descuento + '%'}"></span>
+
+            </div>
+
+            <!-- Sin descuentos -->
+            <div th:if="${producto.descuento == 0}">
+        <span class="precio-normal"
+              th:text="${producto.precio} + ' €'"></span>
+            </div>
+
+        </div>
+
+        <p th:text="${producto.descripcion}"></p>
+
+        <a href="/productos">← Volver</a>
+
+    </div>
+
+</div>
+
+<div th:replace="~{fragmentos/footer :: footer}"></div>
+
+</body>
+</html>

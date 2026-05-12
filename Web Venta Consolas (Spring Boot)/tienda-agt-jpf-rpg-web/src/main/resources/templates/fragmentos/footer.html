@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<footer th:fragment="footer" class="footer">
+    <div class="footer-content">
+
+        <!-- Logo -->
+        <div class="footer-logo">
+            <img th:src="@{/imagenes/logo-ModeGaming.png}" alt="Logo de ModeGaming">
+        </div>
+
+        <!-- LINKS & COPY -->
+        <div class="footer-center">
+            <p class="footer-copy">
+                © 2026 ModeGaming - Todos los derechos reservados
+            </p>
+            <nav class="footer-enlaces">
+                <a href="/sobre-nosotros.html">Sobre nosotros</a>
+                <a th:href="@{/condiciones}">Condiciones</a>
+            </nav>          
+        </div>  
+
+        <!-- Redes  -->
+        <div class="footer-redes">
+            <a href="https://www.instagram.com/"><img th:src="@{/imagenes/redes/instaLogo.png}" alt="Instagram"></a>
+            <a href="https://x.com/"><img th:src="@{/imagenes/redes/twitterLogo.png}" alt="Twitter"></a>
+            <a href="https://www.facebook.com/"><img th:src="@{/imagenes/redes/facebookLogo.png}" alt="Facebook"></a>
+            <a href="https://www.youtube.com/"><img th:src="@{/imagenes/redes/youtubeLogo.png}" alt="YouTube"></a>
+        </div>
+
+    </div>
+</footer>
+</body>
+</html>

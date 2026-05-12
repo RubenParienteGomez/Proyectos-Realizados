@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<body>
+<nav th:fragment="navbar" class="navbar">
+
+    <div class="navbar-content">
+
+        <a class="navbar-logo" th:href="@{/}">
+             <img th:src="@{/imagenes/logo-ModeGaming.png}" alt="Logo de ModeGaming">
+        </a>
+
+        <div class="navbar-enlaces">
+            <a th:href="@{/}">Inicio</a>
+            <a th:href="@{/categorias}">Categorias</a>
+            <a th:href="@{/productos}">Productos</a>
+        </div>
+
+        <div class="navbar-user">
+            <div sec:authorize="isAuthenticated()" class="navbar-user">
+                <span class="user-name">
+                    Hola, <span class="user-email" sec:authentication="name">admin@tienda.com</span>
+                </span>
+                
+                <a th:href="@{/users/profile}" style="margin-right: 10px; color: white; text-decoration: none;">Mi Perfil</a>
+
+                <form th:action="@{/logout}" method="post" style="margin:0; display: inline;">
+                    <button type="submit" class="btn-logout">Cerrar Sesión</button>
+                </form>
+            </div>
+
+            <div sec:authorize="isAnonymous()" class="navbar-user">
+                <a th:href="@{/login}" class="btn-login">Login</a>
+                <a th:href="@{/register}" class="btn-registro">Registro</a>
+            </div>
+        </div>
+    </div>
+</nav>
+</body>
+</html>
